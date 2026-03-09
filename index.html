@@ -19,6 +19,10 @@
             }
             .sticky-nav ul {
                 margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+                justify-content: center;
             }
             /* Styling for the skills tags */
             .skill-category {
@@ -38,8 +42,14 @@
             .soft-skill-tag {
                 border-left: 3px solid #28a745; /* Green for business/soft skills */
             }
-            .experience-item {
+            .experience-item, .achievement-item, .testimonial-item {
                 margin-bottom: 30px;
+            }
+            .testimonial-quote {
+                font-style: italic;
+                border-left: 4px solid #dcdcdc;
+                padding-left: 15px;
+                color: #555;
             }
         </style>
     </head>
@@ -57,45 +67,31 @@
         <div id="main">
 
                 <div class="sticky-nav">
-                    <ul class="actions fit small">
-                        <li><a href="#about" class="button primary fit small nav-link">About</a></li>
-                        <li><a href="#experience" class="button fit small nav-link">Experience</a></li>
-                        <li><a href="#education" class="button fit small nav-link">Education</a></li>
-                        <li><a href="#skills" class="button fit small nav-link">Skills</a></li>
-                        <li><a href="#projects" class="button fit small nav-link">Projects</a></li>
-                        <li><a href="#contact" class="button fit small nav-link">Contact</a></li>
+                    <ul class="actions small">
+                        <li><a href="#cover" class="button primary small nav-link">Cover</a></li>
+                        <li><a href="#about" class="button small nav-link">About</a></li>
+                        <li><a href="#education" class="button small nav-link">Education</a></li>
+                        <li><a href="#skills" class="button small nav-link">Skills</a></li>
+                        <li><a href="#experience" class="button small nav-link">Experience</a></li>
+                        <li><a href="#services" class="button small nav-link">Services</a></li>
+                        <li><a href="#projects" class="button small nav-link">Projects</a></li>
+                        <li><a href="#achievements" class="button small nav-link">Achievements</a></li>
+                        <li><a href="#testimonials" class="button small nav-link">Testimonials</a></li>
+                        <li><a href="#contact" class="button small nav-link">Contact</a></li>
                     </ul>
                 </div>
 
-                <section id="about" class="scroll-section">
+                <section id="cover" class="scroll-section">
                         <header class="major">
-                            <h2>Data Engineer with a Sales Mindset:<br />
-                            Turning Complex Logic into Business Value.</h2>
+                            <h2>Welcome to My Digital Portfolio</h2>
                         </header>
-                        <p>With a strong foundation in Mathematics and Computer Science from Helwan University and advanced expertise as a Microsoft Data Engineer through the DEPI AI & Data Science track, I bridge the gap between technical architecture and business strategy. Because I have hands-on experience working directly on the retail sales floor, I understand that data isn't just about writing code—it's about solving real business problems. I offer comprehensive end-to-end data solutions, specializing in building scalable ETL pipelines, designing Star Schema data warehouses, and creating clean Power BI dashboards that non-technical stakeholders can easily understand and act upon.</p>
+                        <p>I build data architectures that drive revenue. By combining deep technical expertise in the Microsoft Data Stack with front-line retail sales experience, I design pipelines and dashboards that do more than just process numbers—they solve real-world business challenges and empower strategic decision-making.</p>
                 </section>
 
-                <section id="experience" class="scroll-section">
-                    <h2>Experience</h2>
-                    <div class="row">
-                        <div class="col-12 experience-item">
-                            <h3 style="margin-bottom: 0;">Microsoft Data Engineer (Trainee)</h3>
-                            <p style="margin-top: 0; color: #a2a2a2;"><strong>Digital Egypt Pioneers Initiative (DEPI)</strong> | Dec 2025 - Present</p>
-                            <p>Advancing expertise through the intensive AI & Data Science track. Designing and deploying enterprise-level data architectures, including Azure cloud storage integration, automated Python ETL pipelines, SQL Server data warehousing, and interactive Power BI dashboards.</p>
-                        </div>
-                        
-                        <div class="col-12 experience-item">
-                            <h3 style="margin-bottom: 0;">Senior Sales Associate</h3>
-                            <p style="margin-top: 0; color: #a2a2a2;"><strong>Bingo (Mokattam Branch)</strong> | Feb 2026 - Present</p>
-                            <p>Promoted to Senior Sales Associate, taking on advanced responsibilities in retail operations, team leadership, and customer relations. Continuing to leverage this front-line business context to design data pipelines that solve complex, real-world retail challenges like commission structuring and KPI tracking.</p>
-                        </div>
-                        
-                        <div class="col-12 experience-item">
-                            <h3 style="margin-bottom: 0;">Junior Sales Associate</h3>
-                            <p style="margin-top: 0; color: #a2a2a2;"><strong>Bingo (Mokattam Branch)</strong> | Aug 2025 - Jan 2026</p>
-                            <p>Gained direct, foundational experience in retail operations. Developed a deep, practical understanding of point-of-sale (POS) systems, shift management, and the operational logic required to build accurate and automated data engineering solutions.</p>
-                        </div>
-                    </div>
+                <section id="about" class="scroll-section">
+                        <h2>About Me</h2>
+                        <p><strong>Data Engineer with a Sales Mindset: Turning Complex Logic into Business Value.</strong></p>
+                        <p>With a strong foundation in Mathematics and Computer Science from Helwan University and advanced expertise as a Microsoft Data Engineer through the DEPI AI & Data Science track, I bridge the gap between technical architecture and business strategy. Because I have hands-on experience working directly on the retail sales floor, I understand that data isn't just about writing code. I specialize in building scalable ETL pipelines, designing Star Schema data warehouses, and creating clean Power BI dashboards that non-technical stakeholders can easily understand and act upon.</p>
                 </section>
 
                 <section id="education" class="scroll-section">
@@ -112,7 +108,6 @@
                 <section id="skills" class="scroll-section">
                     <h2>Core Competencies & Skills</h2>
                     <p>My skillset is a hybrid of deep technical architecture and practical business acumen, allowing me to build systems that actually make sense for the bottom line.</p>
-                    
                     <div class="row">
                         <div class="col-12 skill-category">
                             <h4>🛠️ Technical & Data Engineering (Hard Skills)</h4>
@@ -125,7 +120,6 @@
                             <span class="skill-tag">Power BI & DAX</span>
                             <span class="skill-tag">Web Scraping & Data Extraction</span>
                         </div>
-                        
                         <div class="col-12 skill-category">
                             <h4>🤝 Business & Operational (Soft Skills)</h4>
                             <span class="skill-tag soft-skill-tag">Retail Sales Floor Operations</span>
@@ -139,6 +133,49 @@
                     </div>
                 </section>
 
+                <section id="experience" class="scroll-section">
+                    <h2>Experience</h2>
+                    <div class="row">
+                        <div class="col-12 experience-item">
+                            <h3 style="margin-bottom: 0;">Microsoft Data Engineer (Trainee)</h3>
+                            <p style="margin-top: 0; color: #a2a2a2;"><strong>Digital Egypt Pioneers Initiative (DEPI)</strong> | Dec 2025 - Present</p>
+                            <p>Advancing expertise through the intensive AI & Data Science track. Designing and deploying enterprise-level data architectures, including Azure cloud storage integration, automated Python ETL pipelines, SQL Server data warehousing, and interactive Power BI dashboards.</p>
+                        </div>
+                        <div class="col-12 experience-item">
+                            <h3 style="margin-bottom: 0;">Senior Sales Associate</h3>
+                            <p style="margin-top: 0; color: #a2a2a2;"><strong>Bingo (Mokattam Branch)</strong> | Feb 2026 - Present</p>
+                            <p>Promoted to Senior Sales Associate, taking on advanced responsibilities in retail operations, team leadership, and customer relations. Continuing to leverage this front-line business context to design data pipelines that solve complex, real-world retail challenges like commission structuring and KPI tracking.</p>
+                        </div>
+                        <div class="col-12 experience-item">
+                            <h3 style="margin-bottom: 0;">Junior Sales Associate</h3>
+                            <p style="margin-top: 0; color: #a2a2a2;"><strong>Bingo (Mokattam Branch)</strong> | Aug 2025 - Jan 2026</p>
+                            <p>Gained direct, foundational experience in retail operations. Developed a deep, practical understanding of point-of-sale (POS) systems, shift management, and the operational logic required to build accurate and automated data engineering solutions.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="services" class="scroll-section">
+                        <h2>Services I Offer</h2>
+                        <div class="row">
+                            <div class="col-6 col-12-xsmall">
+                                <h4>⚙️ Data Pipeline Engineering (ETL)</h4>
+                                <p>Automating the extraction, transformation, and loading of messy data from APIs or flat files into clean, structured databases.</p>
+                            </div>
+                            <div class="col-6 col-12-xsmall">
+                                <h4>📊 Business Intelligence Dashboarding</h4>
+                                <p>Designing interactive Power BI reports that turn raw operational data into actionable visual insights for managers and stakeholders.</p>
+                            </div>
+                            <div class="col-6 col-12-xsmall">
+                                <h4>🗄️ Database Design & Architecture</h4>
+                                <p>Creating highly optimized relational databases, normalizing data structures, and building scalable data warehouses in SQL Server.</p>
+                            </div>
+                            <div class="col-6 col-12-xsmall">
+                                <h4>🕸️ Web Scraping & Data Extraction</h4>
+                                <p>Writing custom Python scripts to scrape unstructured web data to track market trends, pricing, and competitive intelligence.</p>
+                            </div>
+                        </div>
+                    </section>
+
                 <section id="projects" class="scroll-section">
                         <h2>Previous Projects</h2>
                         <div class="row">
@@ -150,7 +187,6 @@
                                     <li><a href="https://github.com/HotFury18/retail-data-engineering-pipeline" target="_blank" class="button primary small">View on GitHub</a></li>
                                 </ul>
                             </article>
-                            
                             <article class="col-6 col-12-xsmall work-item">
                                 <a href="#" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="Motorcycle Market Tracker" /></a>
                                 <h3>Motorcycle Market Price Tracker</h3>
@@ -159,8 +195,36 @@
                         </div>
                     </section>
 
+                <section id="achievements" class="scroll-section">
+                    <h2>Achievements & Milestones</h2>
+                    <div class="row">
+                        <div class="col-12 achievement-item">
+                            <h4>🏆 Rapid Promotion to Senior Sales Associate</h4>
+                            <p>Promoted from Junior to Senior Sales Associate at Bingo within just 6 months, demonstrating a strong grasp of retail business logic, leadership, and operational efficiency.</p>
+                        </div>
+                        <div class="col-12 achievement-item">
+                            <h4>🚀 DEPI Microsoft Data Engineer Track Selection</h4>
+                            <p>Selected to participate in the prestigious Digital Egypt Pioneers Initiative (DEPI) in the highly competitive AI & Data Science track, specializing in the Microsoft Data Stack.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="testimonials" class="scroll-section">
+                    <h2>Testimonials</h2>
+                    <div class="row">
+                        <div class="col-12 testimonial-item">
+                            <p class="testimonial-quote">"Hossam has a rare combination of technical pipeline skills and real retail experience. He doesn't just build databases; he understands exactly how the data impacts daily sales and commission structures."</p>
+                            <p style="margin-top: -10px;"><em>— Placeholder Client / Manager</em></p>
+                        </div>
+                        <div class="col-12 testimonial-item">
+                            <p class="testimonial-quote">"His ability to translate complex sales floor logic into a clean, automated Power BI dashboard saved us countless hours of manual Excel reporting."</p>
+                            <p style="margin-top: -10px;"><em>— Placeholder Client / Colleague</em></p>
+                        </div>
+                    </div>
+                </section>
+
                 <section id="contact" class="scroll-section">
-                        <h2>Contact Information</h2>
+                        <h2>Let's Build Something Impactful</h2>
                         <p>Whether you need a messy dataset cleaned, an automated data pipeline built in Azure, or a Power BI dashboard designed to track your business KPIs, I am ready to help. Reach out below.</p>
                         <div class="row">
                             <div class="col-8 col-12-small">
@@ -171,7 +235,7 @@
                                         <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4" required></textarea></div>
                                     </div>
                                     <ul class="actions" style="margin-top: 20px;">
-                                        <li><input type="submit" value="Send Message" /></li>
+                                        <li><input type="submit" value="Send Message" class="primary" /></li>
                                     </ul>
                                 </form>
                             </div>
@@ -179,73 +243,3 @@
                                 <ul class="labeled-icons">
                                     <li>
                                         <h3 class="icon solid fa-home"><span class="label">Location</span></h3>
-                                        40 Ali Abdelaziz Street<br />
-                                        Maadi, Cairo<br />
-                                        Egypt
-                                    </li>
-                                    <li>
-                                        <h3 class="icon solid fa-phone"><span class="label">Phone</span></h3>
-                                        <a href="tel:+201005092275">+20 100 509 2275</a>
-                                    </li>
-                                    <li>
-                                        <h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-                                        <a href="mailto:hosammahmod01@gmail.com">hosammahmod01@gmail.com</a>
-                                    </li>
-                                    <li>
-                                        <h3 class="icon brands fa-linkedin"><span class="label">LinkedIn</span></h3>
-                                        <a href="https://www.linkedin.com/in/hossam-eldin-mahmoud/" target="_blank">Connect on LinkedIn</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-            </div>
-
-        <footer id="footer">
-                <div class="inner">
-                    <ul class="icons">
-                        <li><a href="https://github.com/HotFury18" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-                        <li><a href="mailto:hosammahmod01@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-                    </ul>
-                    <ul class="copyright">
-                        <li>&copy; Hossam Eldin Mahmoud</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                    </ul>
-                </div>
-            </footer>
-
-        <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/jquery.poptrox.min.js"></script>
-            <script src="assets/js/browser.min.js"></script>
-            <script src="assets/js/breakpoints.min.js"></script>
-            <script src="assets/js/util.js"></script>
-            <script src="assets/js/main.js"></script>
-            <script>
-                $(document).ready(function(){
-                  // Smooth scrolling when clicking the nav buttons
-                  $(".nav-link").on('click', function(event) {
-                    if (this.hash !== "") {
-                      event.preventDefault();
-                      var hash = this.hash;
-                      $('html, body').animate({
-                        scrollTop: $(hash).offset().top - 80 
-                      }, 800, function(){
-                        window.location.hash = hash;
-                      });
-                    }
-                  });
-
-                  // Scroll Spy: Highlight the nav button based on scroll position
-                  $(window).scroll(function() {
-                      var scrollDistance = $(window).scrollTop() + 100; // Offset for header height
-
-                      $('.scroll-section').each(function(i) {
-                          if ($(this).position().top <= scrollDistance) {
-                              $('.sticky-nav a.nav-link').removeClass('primary');
-                              $('.sticky-nav a.nav-link').eq(i).addClass('primary');
-                          }
-                      });
-                  }).scroll(); // Trigger on load
-                });
-            </script>
-    </body>
-</html>
