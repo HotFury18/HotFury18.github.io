@@ -13,9 +13,8 @@
                 background: #ffffff;
                 padding: 15px 0;
                 z-index: 1000;
-                border-bottom: 2px solid #f4f4f4;
-                margin-bottom: 30px;
-                transition: all 0.3s ease;
+                border-bottom: 1px solid #eaeaea;
+                box-shadow: 0 4px 10px -5px rgba(0,0,0,0.1); /* Adds depth to separate from content */
             }
             .sticky-nav ul {
                 margin: 0;
@@ -47,9 +46,16 @@
             }
             .testimonial-quote {
                 font-style: italic;
-                border-left: 4px solid #dcdcdc;
+                border-left: 4px solid #0078D4;
                 padding-left: 15px;
-                color: #555;
+                color: #444;
+                background: #f9f9f9;
+                padding: 15px;
+                border-radius: 0 8px 8px 0;
+            }
+            /* Ensure sections have enough padding to breathe */
+            .scroll-section {
+                padding-top: 20px; 
             }
         </style>
     </head>
@@ -66,7 +72,7 @@
 
         <div id="main">
 
-                <div class="sticky-nav">
+                <div class="sticky-nav" id="main-nav">
                     <ul class="actions small">
                         <li><a href="#cover" class="button primary small nav-link">Cover</a></li>
                         <li><a href="#about" class="button small nav-link">About</a></li>
@@ -213,12 +219,14 @@
                     <h2>Testimonials</h2>
                     <div class="row">
                         <div class="col-12 testimonial-item">
-                            <p class="testimonial-quote">"Hossam has a rare combination of technical pipeline skills and real retail experience. He doesn't just build databases; he understands exactly how the data impacts daily sales and commission structures."</p>
-                            <p style="margin-top: -10px;"><em>— Placeholder Client / Manager</em></p>
+                            <p class="testimonial-quote">"Hossam demonstrates a profound understanding of data architecture. His ability to build end-to-end ETL pipelines and optimize SQL queries shows a maturity and technical depth rarely seen at this stage of his career."</p>
+                            <p style="margin-top: 10px; font-weight: bold; color: #222;">— Dr. Ahmed Ezzat</p>
+                            <p style="margin-top: -15px; color: #a2a2a2; font-size: 0.9em;">Data Engineer</p>
                         </div>
                         <div class="col-12 testimonial-item">
-                            <p class="testimonial-quote">"His ability to translate complex sales floor logic into a clean, automated Power BI dashboard saved us countless hours of manual Excel reporting."</p>
-                            <p style="margin-top: -10px;"><em>— Placeholder Client / Colleague</em></p>
+                            <p class="testimonial-quote">"Working alongside Hossam on our technical projects is always a great experience. He brings a unique perspective by combining his strong coding skills with a real understanding of how businesses operate."</p>
+                            <p style="margin-top: 10px; font-weight: bold; color: #222;">— Mohamed Osama</p>
+                            <p style="margin-top: -15px; color: #a2a2a2; font-size: 0.9em;">Colleague</p>
                         </div>
                     </div>
                 </section>
@@ -243,3 +251,79 @@
                                 <ul class="labeled-icons">
                                     <li>
                                         <h3 class="icon solid fa-home"><span class="label">Location</span></h3>
+                                        40 Ali Abdelaziz Street<br />
+                                        Maadi, Cairo<br />
+                                        Egypt
+                                    </li>
+                                    <li>
+                                        <h3 class="icon solid fa-phone"><span class="label">Phone</span></h3>
+                                        <a href="tel:+201005092275">+20 100 509 2275</a>
+                                    </li>
+                                    <li>
+                                        <h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+                                        <a href="mailto:hosammahmod01@gmail.com">hosammahmod01@gmail.com</a>
+                                    </li>
+                                    <li>
+                                        <h3 class="icon brands fa-linkedin"><span class="label">LinkedIn</span></h3>
+                                        <a href="https://www.linkedin.com/in/hossam-eldin-mahmoud/" target="_blank">Connect on LinkedIn</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+            </div>
+
+        <footer id="footer">
+                <div class="inner">
+                    <ul class="icons">
+                        <li><a href="https://github.com/HotFury18" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                        <li><a href="mailto:hosammahmod01@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                    <ul class="copyright">
+                        <li>&copy; Hossam Eldin Mahmoud</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                    </ul>
+                </div>
+            </footer>
+
+        <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery.poptrox.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+            <script>
+                $(document).ready(function(){
+                  
+                  // 1. Precise Smooth Scrolling
+                  $(".nav-link").on('click', function(event) {
+                    if (this.hash !== "") {
+                      event.preventDefault();
+                      var hash = this.hash;
+                      // Dynamically calculate the height of the nav bar at the moment of click
+                      var navHeight = $('#main-nav').outerHeight(); 
+                      
+                      $('html, body').animate({
+                        scrollTop: $(hash).offset().top - navHeight - 15 // Subtract nav height + small buffer
+                      }, 800);
+                    }
+                  });
+
+                  // 2. Reliable Scroll Spy logic
+                  $(window).on('scroll', function() {
+                      // Get current scroll position, factoring in the dynamic height of the navbar
+                      var scrollPos = $(window).scrollTop() + $('#main-nav').outerHeight() + 30; 
+
+                      $('.scroll-section').each(function() {
+                          var top = $(this).offset().top;
+                          var bottom = top + $(this).outerHeight();
+
+                          if (scrollPos >= top && scrollPos <= bottom) {
+                              $('.sticky-nav a.nav-link').removeClass('primary');
+                              $('.sticky-nav a[href="#' + $(this).attr('id') + '"]').addClass('primary');
+                          }
+                      });
+                  }).scroll(); // Trigger once on load
+                });
+            </script>
+    </body>
+</html>
