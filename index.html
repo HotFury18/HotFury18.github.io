@@ -5,6 +5,39 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            /* Custom styling for the sticky navigation menu */
+            .sticky-nav {
+                position: sticky;
+                top: 0;
+                background: #ffffff;
+                padding: 15px 0;
+                z-index: 1000;
+                border-bottom: 2px solid #f4f4f4;
+                margin-bottom: 30px;
+            }
+            .sticky-nav ul {
+                margin: 0;
+            }
+            /* Styling for the skills tags */
+            .skill-category {
+                margin-bottom: 25px;
+            }
+            .skill-tag {
+                display: inline-block;
+                background: #eef2f5;
+                border-left: 3px solid #0078D4; /* Microsoft Blue */
+                padding: 6px 14px;
+                border-radius: 4px;
+                margin: 5px 4px;
+                font-size: 0.85em;
+                font-weight: 600;
+                color: #333;
+            }
+            .soft-skill-tag {
+                border-left: 3px solid #28a745; /* Green for business/soft skills */
+            }
+        </style>
     </head>
     <body class="is-preload">
 
@@ -19,53 +52,66 @@
 
         <div id="main">
 
-                <section id="one">
+                <div class="sticky-nav">
+                    <ul class="actions fit small">
+                        <li><a href="#about" class="button primary fit small">About</a></li>
+                        <li><a href="#experience" class="button fit small">Experience</a></li>
+                        <li><a href="#skills" class="button fit small">Skills</a></li>
+                        <li><a href="#projects" class="button fit small">Projects</a></li>
+                        <li><a href="#contact" class="button fit small">Contact</a></li>
+                    </ul>
+                </div>
+
+                <section id="about">
                         <header class="major">
                             <h2>Data Engineer with a Sales Mindset:<br />
                             Turning Complex Logic into Business Value.</h2>
                         </header>
                         <p>With a strong foundation in Mathematics and Computer Science from Helwan University and advanced expertise as a Microsoft Data Engineer through the DEPI AI & Data Science track, I bridge the gap between technical architecture and business strategy. Because I have hands-on experience working directly on the retail sales floor, I understand that data isn't just about writing code—it's about solving real business problems. I offer comprehensive end-to-end data solutions, specializing in building scalable ETL pipelines, designing Star Schema data warehouses, and creating clean Power BI dashboards that non-technical stakeholders can easily understand and act upon.</p>
+                </section>
+
+                <section id="experience">
+                    <h2>Experience</h2>
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 style="margin-bottom: 0;">Junior Sales Associate</h3>
+                            <p style="margin-top: 0; color: #a2a2a2;"><strong>Bingo (Mokattam Branch)</strong> | Present</p>
+                            <p>Gaining direct, front-line experience in retail operations and customer relations. This role provides the critical business context behind my data engineering projects—giving me a deep, practical understanding of point-of-sale (POS) systems, shift management, and complex commission structures. I leverage this operational knowledge to design automated data pipelines that solve real, floor-level retail challenges.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="skills">
+                    <h2>Core Competencies & Skills</h2>
+                    <p>My skillset is a hybrid of deep technical architecture and practical business acumen, allowing me to build systems that actually make sense for the bottom line.</p>
+                    
+                    <div class="row">
+                        <div class="col-12 skill-category">
+                            <h4>🛠️ Technical & Data Engineering (Hard Skills)</h4>
+                            <span class="skill-tag">Python (Pandas, Scripting)</span>
+                            <span class="skill-tag">SQL & T-SQL</span>
+                            <span class="skill-tag">Microsoft SQL Server</span>
+                            <span class="skill-tag">Azure Blob Storage / Data Lakes</span>
+                            <span class="skill-tag">ETL / ELT Pipeline Automation</span>
+                            <span class="skill-tag">Star Schema & Data Modeling</span>
+                            <span class="skill-tag">Power BI & DAX</span>
+                            <span class="skill-tag">Web Scraping & Data Extraction</span>
+                        </div>
                         
-                        <h3>Technical Skills</h3>
-                        <div class="row">
-                            <div class="col-6 col-12-xsmall">
-                                <ul>
-                                    <li><strong>Programming & Querying:</strong> Python, T-SQL, SQL</li>
-                                    <li><strong>Data Warehousing:</strong> SQL Server, Database Normalization, Star Schema Modeling</li>
-                                </ul>
-                            </div>
-                            <div class="col-6 col-12-xsmall">
-                                <ul>
-                                    <li><strong>Cloud & Big Data:</strong> Azure Storage, Data Lakes, ETL/ELT Architectures</li>
-                                    <li><strong>BI & Analytics:</strong> Power BI, Data Aggregation, Business Reporting</li>
-                                </ul>
-                            </div>
+                        <div class="col-12 skill-category">
+                            <h4>🤝 Business & Operational (Soft Skills)</h4>
+                            <span class="skill-tag soft-skill-tag">Retail Sales Floor Operations</span>
+                            <span class="skill-tag soft-skill-tag">Business Logic Translation</span>
+                            <span class="skill-tag soft-skill-tag">Commission & Payroll Structuring</span>
+                            <span class="skill-tag soft-skill-tag">KPI Tracking & Reporting</span>
+                            <span class="skill-tag soft-skill-tag">Cross-functional Communication</span>
+                            <span class="skill-tag soft-skill-tag">Problem Solving & Analytical Thinking</span>
+                            <span class="skill-tag soft-skill-tag">Stakeholder Management</span>
                         </div>
-                    </section>
+                    </div>
+                </section>
 
-                <section id="services">
-                        <h2>Services I Offer</h2>
-                        <div class="row">
-                            <div class="col-6 col-12-xsmall">
-                                <h4>⚙️ Data Pipeline Engineering (ETL)</h4>
-                                <p>Automating the extraction, transformation, and loading of messy data from APIs or flat files into clean, structured databases.</p>
-                            </div>
-                            <div class="col-6 col-12-xsmall">
-                                <h4>📊 Business Intelligence Dashboarding</h4>
-                                <p>Designing interactive Power BI reports that turn raw operational data into actionable visual insights for managers and stakeholders.</p>
-                            </div>
-                            <div class="col-6 col-12-xsmall">
-                                <h4>🗄️ Database Design & Architecture</h4>
-                                <p>Creating highly optimized relational databases, normalizing data structures, and building scalable data warehouses in SQL Server.</p>
-                            </div>
-                            <div class="col-6 col-12-xsmall">
-                                <h4>🕸️ Web Scraping & Data Extraction</h4>
-                                <p>Writing custom Python scripts to scrape unstructured web data to track market trends, pricing, and competitive intelligence.</p>
-                            </div>
-                        </div>
-                    </section>
-
-                <section id="two">
+                <section id="projects">
                         <h2>Previous Projects</h2>
                         <div class="row">
                             <article class="col-6 col-12-xsmall work-item">
@@ -85,7 +131,7 @@
                         </div>
                     </section>
 
-                <section id="three">
+                <section id="contact">
                         <h2>Contact Information</h2>
                         <p>Whether you need a messy dataset cleaned, an automated data pipeline built in Azure, or a Power BI dashboard designed to track your business KPIs, I am ready to help. Reach out below.</p>
                         <div class="row">
@@ -108,6 +154,10 @@
                                         40 Ali Abdelaziz Street<br />
                                         Maadi, Cairo<br />
                                         Egypt
+                                    </li>
+                                    <li>
+                                        <h3 class="icon solid fa-phone"><span class="label">Phone</span></h3>
+                                        <a href="tel:+201005092275">+20 100 509 2275</a>
                                     </li>
                                     <li>
                                         <h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
@@ -141,6 +191,21 @@
             <script src="assets/js/breakpoints.min.js"></script>
             <script src="assets/js/util.js"></script>
             <script src="assets/js/main.js"></script>
-
+            <script>
+                // This small script ensures smooth scrolling when clicking the nav buttons
+                $(document).ready(function(){
+                  $("a.button").on('click', function(event) {
+                    if (this.hash !== "") {
+                      event.preventDefault();
+                      var hash = this.hash;
+                      $('html, body').animate({
+                        scrollTop: $(hash).offset().top - 80 // Adjusts for the sticky header height
+                      }, 800, function(){
+                        window.location.hash = hash;
+                      });
+                    }
+                  });
+                });
+            </script>
     </body>
 </html>
